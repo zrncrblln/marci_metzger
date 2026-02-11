@@ -1,3 +1,4 @@
-- [x] Install framer-motion
-- [ ] Update ImageShowcase.tsx with new luxury carousel component using Framer Motion
-- [ ] Test the carousel functionality and responsiveness
+- [x] Add auto-play functionality to ImageShowcase carousel with setInterval for automatic progression every 4 seconds
+- [x] Ensure infinite loop is smooth (already implemented with modulo, but verify)
+- [x] Add pause on hover for better UX
+- [x] Test the carousel to ensure it works correctly

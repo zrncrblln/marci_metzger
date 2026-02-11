@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {
@@ -7,6 +7,7 @@ type Props = {
 
 export default function ImageShowcase({ images }: Props) {
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
+  const [isHovered, setIsHovered] = useState(false);
 
   const paginate = (dir: number) => {
     const newIndex = (index + dir + images.length) % images.length;
@@ -34,9 +35,22 @@ export default function ImageShowcase({ images }: Props) {
     }),
   };
 
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        paginate(1);
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [isHovered, index]);
+
   return (
-    <div className="w-full bg-[#f3f4f6] py-14 flex justify-center">
-      <div className="relative w-[92%] max-w-[1400px]">
+    <div className="w-full bg-white py-14 flex justify-center">
+      <div
+        className="relative w-[92%] max-w-[1400px]"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {/* LEFT PREVIEW */}
         <div className="hidden lg:block absolute -left-20 top-1/2 -translate-y-1/2 w-60 h-[340px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
           <img src={images[prevIndex]} className="w-full h-full object-cover" />
@@ -48,11 +62,28 @@ export default function ImageShowcase({ images }: Props) {
         </div>
 
         {/* MAIN FLOATING CARD */}
-        <div className="relative overflow-hidden rounded-[28px] shadow-[0_30px_60px_rgba(0,0,0,0.18)] bg-white">
-          <img
-            src={images[index]}
-            className="w-full h-[480px] md:h-[560px] lg:h-[640px] object-cover select-none"
-          />
+        <div className="relative overflow-hidden rounded-[28px] shadow-[0_30px_60px_rgba(0,0,0,0.18)] bg-white h-[480px] md:h-[560px] lg:h-[640px]">
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={index}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+                scale: { duration: 0.2 },
+              }}
+              className="absolute inset +1"
+            >
+              <img
+                src={images[index]}
+                className="w-full h-full object-cover select-none rounded-[20px]"
+              />
+            </motion.div>
+          </AnimatePresence>
 
           {/* NAV ARROWS */}
           <button
