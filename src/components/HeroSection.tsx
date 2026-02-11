@@ -2,12 +2,12 @@ import heroVilla from "@/assets/hero-villa.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem]">
+    <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden rounded-[2rem] md:rounded-[3rem]">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-4 bg-cover bg-center rounded-[2rem] md:rounded-[3rem]"
         style={{ backgroundImage: `url(${heroVilla})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
+      <div className="absolute inset-4 bg-gradient-to-b from-black/30 via-black/20 to-black/40 rounded-[2rem] md:rounded-[3rem]" />
 
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto pt-24">
         <p className="text-sm tracking-wider text-white/80 mb-4">
