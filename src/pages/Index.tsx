@@ -11,13 +11,40 @@ import CtaSection from "@/components/CtaSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
+const images = [
+  {
+    src: "/src/assets/c1.jpg",
+    alt: "High resolution image c1 from Marci Metzger Homes",
+  },
+  {
+    src: "/src/assets/c2.png",
+    alt: "High resolution image c2 from Marci Metzger Homes",
+  },
+  {
+    src: "/src/assets/c3.png",
+    alt: "High resolution image c3 from Marci Metzger Homes",
+  },
+  {
+    src: "/src/assets/c4.png",
+    alt: "High resolution image c4 from Marci Metzger Homes",
+  },
+  {
+    src: "/src/assets/c5.jpg",
+    alt: "High resolution image c5 from Marci Metzger Homes",
+  },
+  {
+    src: "/src/assets/c6.png",
+    alt: "High resolution image c6 from Marci Metzger Homes",
+  },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
       <TestimonialQuote />
-      <ImageShowcase />
+      <ImageShowcase images={images.map((img) => img.src)} />
       <FeaturesSection />
       <PropertiesSection />
       <BlogSection />

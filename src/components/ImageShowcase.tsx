@@ -1,91 +1,90 @@
-import { useState, useEffect } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const ImageShowcase = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
+type Props = {
+  images: string[];
+};
 
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
+export default function ImageShowcase({ images }: Props) {
+  const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
 
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
+  const paginate = (dir: number) => {
+    const newIndex = (index + dir + images.length) % images.length;
+    setIndex([newIndex, dir]);
+  };
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
+  const prevIndex = (index - 1 + images.length) % images.length;
+  const nextIndex = (index + 1) % images.length;
 
-  const images = [
-    {
-      src: "/src/assets/c1.jpg",
-      alt: "High resolution image c1 from Marci Metzger Homes",
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 140 : -140,
+      opacity: 0,
+      scale: 0.97,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
     },
-    {
-      src: "/src/assets/c2.png",
-      alt: "High resolution image c2 from Marci Metzger Homes",
-    },
-    {
-      src: "/src/assets/c3.png",
-      alt: "High resolution image c3 from Marci Metzger Homes",
-    },
-    {
-      src: "/src/assets/c4.png",
-      alt: "High resolution image c4 from Marci Metzger Homes",
-    },
-    {
-      src: "/src/assets/c5.jpg",
-      alt: "High resolution image c5 from Marci Metzger Homes",
-    },
-    {
-      src: "/src/assets/c6.png",
-      alt: "High resolution image c6 from Marci Metzger Homes",
-    },
-  ];
+    exit: (dir: number) => ({
+      x: dir < 0 ? 140 : -140,
+      opacity: 0,
+      scale: 0.97,
+    }),
+  };
 
   return (
-    <section className="px-4 pb-20">
-      <div className="max-w-5xl mx-auto">
-        <Carousel
-          setApi={setApi}
-          plugins={[Autoplay({ delay: 3000 })]}
-          className="rounded-3xl overflow-hidden"
-        >
-          <CarouselContent>
-            {images.map((image, index) => (
-              <CarouselItem key={index}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-[400px] md:h-[550px] object-cover"
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        <div className="flex justify-center gap-2 mt-4">
-          {Array.from({ length: count }, (_, index) => (
+    <div className="w-full bg-[#f3f4f6] py-14 flex justify-center">
+      <div className="relative w-[92%] max-w-[1400px]">
+        {/* LEFT PREVIEW */}
+        <div className="hidden lg:block absolute -left-20 top-1/2 -translate-y-1/2 w-60 h-[340px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
+          <img src={images[prevIndex]} className="w-full h-full object-cover" />
+        </div>
+
+        {/* RIGHT PREVIEW */}
+        <div className="hidden lg:block absolute -right-20 top-1/2 -translate-y-1/2 w-60 h-[340px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
+          <img src={images[nextIndex]} className="w-full h-full object-cover" />
+        </div>
+
+        {/* MAIN FLOATING CARD */}
+        <div className="relative overflow-hidden rounded-[28px] shadow-[0_30px_60px_rgba(0,0,0,0.18)] bg-white">
+          <img
+            src={images[index]}
+            className="w-full h-[480px] md:h-[560px] lg:h-[640px] object-cover select-none"
+          />
+
+          {/* NAV ARROWS */}
+          <button
+            onClick={() => paginate(-1)}
+            className="absolute left-5 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-md px-4 py-2 rounded-xl shadow-md hover:bg-white"
+          >
+            ‹
+          </button>
+
+          <button
+            onClick={() => paginate(1)}
+            className="absolute right-5 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-md px-4 py-2 rounded-xl shadow-md hover:bg-white"
+          >
+            ›
+          </button>
+        </div>
+
+        {/* DOT NAVIGATION */}
+        <div className="flex justify-center gap-2 mt-6">
+          {images.map((_, i) => (
             <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={`w-2 h-2 rounded-full cursor-pointer ${
-                index + 1 === current ? "bg-muted-foreground" : "bg-border"
+              key={i}
+              onClick={() => setIndex([i, i > index ? 1 : -1])}
+              className={`transition-all rounded-full ${
+                i === index
+                  ? "w-7 h-2 bg-neutral-800"
+                  : "w-2 h-2 bg-neutral-400"
               }`}
             />
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
-};
-
-export default ImageShowcase;
+}
