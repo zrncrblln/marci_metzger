@@ -47,22 +47,22 @@ export default function ImageShowcase({ images }: Props) {
   return (
     <div className="w-full bg-white py-14 flex justify-center">
       <div
-        className="relative w-[92%] max-w-[1400px]"
+        className="relative w-[92%] max-w-[1200px]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* LEFT PREVIEW */}
-        <div className="hidden lg:block absolute -left-20 top-1/2 -translate-y-1/2 w-60 h-[340px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
+        <div className="hidden lg:block absolute -left-20 top-1/2 -translate-y-1/2 w-60 h-[300px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
           <img src={images[prevIndex]} className="w-full h-full object-cover" />
         </div>
 
         {/* RIGHT PREVIEW */}
-        <div className="hidden lg:block absolute -right-20 top-1/2 -translate-y-1/2 w-60 h-[340px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
+        <div className="hidden lg:block absolute -right-20 top-1/2 -translate-y-1/2 w-60 h-[300px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
           <img src={images[nextIndex]} className="w-full h-full object-cover" />
         </div>
 
         {/* MAIN FLOATING CARD */}
-        <div className="relative overflow-hidden rounded-[28px] shadow-[0_30px_60px_rgba(0,0,0,0.18)] bg-white h-[480px] md:h-[560px] lg:h-[640px]">
+        <div className="relative overflow-hidden rounded-[28px] shadow-[0_30px_60px_rgba(0,0,0,0.18)] bg-white h-[400px] md:h-[480px] lg:h-[560px]">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={index}

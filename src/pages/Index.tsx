@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 
 const images = [
   {
-    src: "/src/assets/c1.jpg",
+    src: "/src/assets/c1.png",
     alt: "High resolution image c1 from Marci Metzger Homes",
   },
   {
