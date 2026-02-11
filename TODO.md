@@ -6,3 +6,4 @@
 - [x] Update src/components/CtaSection.tsx: Replace text with placeholders (e.g., "CTA Title", "CTA Description")
 - [x] Create src/components/ContactSection.tsx: New component with placeholders for contact info (phone, email, address, map)
 - [x] Update src/pages/Index.tsx: Include the new ContactSection before Footer
+- [x] Update src/components/TestimonialQuote.tsx: Change testimonial from "Minedly Licsa @Ceo Founder" to "Marci J Metzger" with new quote and role
