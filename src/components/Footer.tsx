@@ -1,12 +1,16 @@
+import logo from "../assets/logo.png";
+
 const Footer = () => {
   return (
     <footer className="py-16 px-4 border-t border-border">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-1">
-            <h3 className="font-heading text-xl font-bold mb-3">
-              Marci Metzger Homes
-            </h3>
+            <img
+              src={logo}
+              alt="Marci Metzger Homes"
+              className="h-10 w-auto mb-3"
+            />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Over two decades in real estate. Licensed Broker in Seattle, now
               serving Southern Nevada as Pahrump's top real estate agent.

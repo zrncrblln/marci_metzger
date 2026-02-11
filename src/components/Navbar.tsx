@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -11,11 +12,22 @@ const Navbar = () => {
     { label: "Contact", href: "#contact" },
   ];
 
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    const targetId = href.slice(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+    setMobileOpen(false);
+  };
+
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-3xl bg-background/80 backdrop-blur-md rounded-full border border-border px-6 py-3 flex items-center justify-between">
-      <span className="font-heading text-xl text-foreground font-bold">
-        Marci Metzger
-      </span>
+      <img src={logo} alt="Marci Metzger" className="h-8 w-auto" />
 
       <div className="hidden md:flex items-center gap-6">
         {links.map((l) => (
@@ -23,6 +35,7 @@ const Navbar = () => {
             key={l.label}
             href={l.href}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            onClick={(e) => handleClick(e, l.href)}
           >
             {l.label}
           </a>
@@ -32,6 +45,7 @@ const Navbar = () => {
       <a
         href="#subscribe"
         className="hidden md:inline-flex px-5 py-2 rounded-full border border-foreground text-sm text-foreground hover:bg-foreground hover:text-primary-foreground transition-colors"
+        onClick={(e) => handleClick(e, "#subscribe")}
       >
         Get Started
       </a>
@@ -47,7 +61,7 @@ const Navbar = () => {
               key={l.label}
               href={l.href}
               className="text-sm text-muted-foreground hover:text-foreground"
-              onClick={() => setMobileOpen(false)}
+              onClick={(e) => handleClick(e, l.href)}
             >
               {l.label}
             </a>
@@ -55,6 +69,7 @@ const Navbar = () => {
           <a
             href="#subscribe"
             className="px-5 py-2 rounded-full border border-foreground text-sm text-foreground text-center"
+            onClick={(e) => handleClick(e, "#subscribe")}
           >
             Get Started
           </a>

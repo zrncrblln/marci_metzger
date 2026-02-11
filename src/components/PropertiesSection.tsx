@@ -5,10 +5,38 @@ import giose from "@/assets/property-giose.jpg";
 import leoxa from "@/assets/property-leoxa.jpg";
 
 const properties = [
-  { name: "Alexandria", location: "Grand Harbor", price: "$4,000.00", bedrooms: 4, bathrooms: 2, image: alexandria },
-  { name: "Bilvox", location: "Silver Heights", price: "$4,000.00", bedrooms: 4, bathrooms: 2, image: bilvox },
-  { name: "The Giose", location: "East Haven", price: "$4,000.00", bedrooms: 4, bathrooms: 2, image: giose },
-  { name: "Leoxa Retreat", location: "Crown Valley", price: "$4,000.00", bedrooms: 4, bathrooms: 2, image: leoxa },
+  {
+    name: "Alexandria",
+    location: "Grand Harbor",
+    price: "$4,000.00",
+    bedrooms: 4,
+    bathrooms: 2,
+    image: alexandria,
+  },
+  {
+    name: "Bilvox",
+    location: "Silver Heights",
+    price: "$4,000.00",
+    bedrooms: 4,
+    bathrooms: 2,
+    image: bilvox,
+  },
+  {
+    name: "The Giose",
+    location: "East Haven",
+    price: "$4,000.00",
+    bedrooms: 4,
+    bathrooms: 2,
+    image: giose,
+  },
+  {
+    name: "Leoxa Retreat",
+    location: "Crown Valley",
+    price: "$4,000.00",
+    bedrooms: 4,
+    bathrooms: 2,
+    image: leoxa,
+  },
 ];
 
 const PropertiesSection = () => {
@@ -18,7 +46,9 @@ const PropertiesSection = () => {
         <div className="text-center mb-14">
           <p className="section-label mb-3">Properties</p>
           <h2 className="section-heading mb-4">Discover homes that Inspire</h2>
-          <p className="section-subheading">Luxury residences where design meets comfort.</p>
+          <p className="section-subheading">
+            Luxury residences where design meets comfort.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -40,8 +70,12 @@ const PropertiesSection = () => {
                 <span>{p.location}</span>
               </div>
               <div className="flex gap-2">
-                <span className="px-3 py-1 rounded-full border border-border text-xs">{p.bedrooms} Bedroom</span>
-                <span className="px-3 py-1 rounded-full border border-border text-xs">{p.bathrooms} Bathroom</span>
+                <span className="px-3 py-1 rounded-full border border-border text-xs">
+                  {p.bedrooms} Bedroom
+                </span>
+                <span className="px-3 py-1 rounded-full border border-border text-xs">
+                  {p.bathrooms} Bathroom
+                </span>
               </div>
             </div>
           ))}
