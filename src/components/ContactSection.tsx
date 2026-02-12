@@ -53,7 +53,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
+          <div className="w-full h-80 rounded-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.1234567890123!2d-115.95528754494798!3d36.184402445333134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzYuMTg0NDAyNDQ1MzMzMTM0LC0xMTUuOTU1Mjg3NTQ0OTQ3OTg!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
               width="100%"
@@ -61,7 +61,6 @@ const ContactSection = () => {
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
               title="Marci Metzger Homes Location"
             ></iframe>
           </div>
