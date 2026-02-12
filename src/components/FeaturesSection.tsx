@@ -13,9 +13,9 @@ import custom from "@/assets/villa-custom.jpg";
 const features = [
   {
     icon: FileText,
-    title: "Exceptional Craftsmanship",
+    title: "Intelligent Design, Elevated Living",
     description:
-      "Meticulously crafted with top-tier materials for unmatched quality.",
+      "Where luxury, sustainability, and cutting-edge technology converge.",
   },
   {
     type: "image" as const,
@@ -65,18 +65,21 @@ const FeaturesSection = () => {
             Explore what makes each Marci Metzger home unique.
           </p>
         </div>
-
+        ''
         {/* Bento Grid */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           {/* Row 1 */}
-          <div className="bg-background rounded-2xl p-6 border border-border">
-            <FileText size={24} className="text-foreground mb-3" />
-            <h3 className="font-heading text-lg mb-2">
-              Exceptional Craftsmanship
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Meticulously crafted with top-tier materials for unmatched
-              quality.
+          <div className="bg-background rounded-2xl overflow-hidden border border-border">
+            <div className="p-4 pb-0">
+              <h3 className="font-heading text-lg mb-2">Innovative Living</h3>
+            </div>
+            <img
+              src={innovative}
+              alt="Innovative Living"
+              className="w-full h-48 object-cover"
+            />
+            <p className="text-sm text-muted-foreground px-4 pb-4">
+              Luxury meets efficiency with smart tech and eco features.
             </p>
           </div>
           <div className="bg-background rounded-2xl overflow-hidden border border-border">
@@ -93,36 +96,6 @@ const FeaturesSection = () => {
               realizing your vision.
             </p>
           </div>
-          <div className="bg-background rounded-2xl p-6 border border-border">
-            <Repeat size={24} className="text-foreground mb-3" />
-            <h3 className="font-heading text-lg mb-2">Adaptable Design</h3>
-            <p className="text-sm text-muted-foreground">
-              Our designs adapt to your needs for lasting functionality.
-            </p>
-          </div>
-
-          {/* Row 2 */}
-          <div className="bg-background rounded-2xl overflow-hidden border border-border">
-            <div className="p-4 pb-0">
-              <h3 className="font-heading text-lg mb-2">Innovative Living</h3>
-            </div>
-            <img
-              src={innovative}
-              alt="Innovative Living"
-              className="w-full h-48 object-cover"
-            />
-            <p className="text-sm text-muted-foreground px-4 pb-4">
-              Luxury meets efficiency with smart tech and eco features.
-            </p>
-          </div>
-          <div className="bg-background rounded-2xl p-6 border border-border">
-            <MapPin size={24} className="text-foreground mb-3" />
-            <h3 className="font-heading text-lg mb-2">Prime Locations</h3>
-            <p className="text-sm text-muted-foreground">
-              Nestled in serene settings, Haven homes provide privacy and
-              breathtaking views.
-            </p>
-          </div>
           <div className="bg-background rounded-2xl overflow-hidden border border-border">
             <div className="p-4 pb-0">
               <h3 className="font-heading text-lg mb-2">Custom Design</h3>
@@ -137,8 +110,34 @@ const FeaturesSection = () => {
               lifestyle and taste.
             </p>
           </div>
-        </div>
 
+          {/* Row 2 */}
+          <div className="bg-background rounded-2xl p-4 border border-border h-40">
+            <FileText size={24} className="text-foreground mb-3" />
+            <h3 className="font-heading text-lg mb-2">
+              Exceptional Craftsmanship
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Where luxury, sustainability, and cutting-edge technology
+              converge.
+            </p>
+          </div>
+          <div className="bg-background rounded-2xl p-4 border border-border h-40">
+            <Repeat size={24} className="text-foreground mb-3" />
+            <h3 className="font-heading text-lg mb-2">Adaptable Design</h3>
+            <p className="text-sm text-muted-foreground">
+              Our designs adapt to your needs for lasting functionality.
+            </p>
+          </div>
+          <div className="bg-background rounded-2xl p-4 border border-border h-40">
+            <MapPin size={24} className="text-foreground mb-3" />
+            <h3 className="font-heading text-lg mb-2">Prime Locations</h3>
+            <p className="text-sm text-muted-foreground">
+              Nestled in serene settings, Haven homes provide privacy and
+              breathtaking views.
+            </p>
+          </div>
+        </div>
         <div className="flex justify-center">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-border bg-background text-sm">
             <Star size={16} className="fill-accent text-accent" />
