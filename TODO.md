@@ -1,10 +1,10 @@
-- [ ] Remove Firebase dependencies from package.json
-- [ ] Update ContactSection.tsx to use localStorage instead of Firebase
-- [ ] Update TestimonialsSection.tsx to use hardcoded data instead of Firebase
-- [ ] Remove any Firebase initialization code
-- [ ] Build the project to docs/
-- [ ] Test the built site locally
-- [ ] Create GitHub repository named 'marci_metzger'
-- [ ] Push code to main branch
-- [ ] Set GitHub Pages to deploy from docs/ folder on main branch
-- [ ] Verify the site works on GitHub Pages
+- [x] Remove Firebase dependencies from package.json
+- [x] Update ContactSection.tsx to use localStorage instead of Firebase
+- [x] Update TestimonialsSection.tsx to use hardcoded data instead of Firebase
+- [x] Remove any Firebase initialization code
+- [x] Build the project to docs/
+- [x] Test the built site locally
+- [x] Create GitHub repository named 'marci_metzger'
+- [x] Push code to main branch
+- [x] Set GitHub Pages to deploy from docs/ folder on main branch
+- [x] Verify the site works on GitHub Pages
