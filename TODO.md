@@ -1,15 +1,10 @@
-- [x] Import partnership image in src/pages/Index.tsx
-- [x] Add partnership image section after HeroSection in src/pages/Index.tsx
-- [x] Update src/components/FeaturesSection.tsx: Change bento grid to responsive grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-- [x] Update src/components/HeroSection.tsx: Make background positioning responsive with left-4 right-4 md:left-12 md:right-12
-- [x] Update src/components/HeroSection.tsx: Reduce heading text size (text-4xl sm:text-5xl md:text-7xl) and adjust border radius (rounded-[1rem] sm:rounded-[2rem] md:rounded-[3rem])
-- [x] Update src/components/FeaturesSection.tsx: Make image heights responsive (h-32 sm:h-40 md:h-48)
-- [x] Make partnership image responsive in src/pages/Index.tsx
-- [x] Test responsiveness by running dev server and checking on small devices
-- [x] Prevent horizontal scrolling on small devices by adding overflow-x: hidden to body and adjusting ImageShowcase layout
-- [x] Fix useCallback dependency warning in ImageShowcase component
-- [x] Add ThemeProvider for dark/light theme support
-- [x] Add dark theme CSS variables
-- [x] Configure Vite for GitHub Pages deployment with correct base path
-- [x] Update meta tags for production deployment
-- [x] Build the project for production
+- [ ] Remove Firebase dependencies from package.json
+- [ ] Update ContactSection.tsx to use localStorage instead of Firebase
+- [ ] Update TestimonialsSection.tsx to use hardcoded data instead of Firebase
+- [ ] Remove any Firebase initialization code
+- [ ] Build the project to docs/
+- [ ] Test the built site locally
+- [ ] Create GitHub repository named 'marci_metzger'
+- [ ] Push code to main branch
+- [ ] Set GitHub Pages to deploy from docs/ folder on main branch
+- [ ] Verify the site works on GitHub Pages
