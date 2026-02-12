@@ -7,3 +7,9 @@
 - [x] Make partnership image responsive in src/pages/Index.tsx
 - [x] Test responsiveness by running dev server and checking on small devices
 - [x] Prevent horizontal scrolling on small devices by adding overflow-x: hidden to body and adjusting ImageShowcase layout
+- [x] Fix useCallback dependency warning in ImageShowcase component
+- [x] Add ThemeProvider for dark/light theme support
+- [x] Add dark theme CSS variables
+- [x] Configure Vite for GitHub Pages deployment with correct base path
+- [x] Update meta tags for production deployment
+- [x] Build the project for production
