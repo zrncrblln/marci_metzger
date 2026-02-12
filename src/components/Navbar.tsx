@@ -27,7 +27,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-3xl bg-background/80 backdrop-blur-md rounded-full border border-border px-6 py-3 flex items-center justify-between">
-      <img src={logo} alt="Marci Metzger" className="h-8 w-auto" />
+      <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+        <img src={logo} alt="Marci Metzger" className="h-8 w-auto" />
+      </button>
 
       <div className="hidden md:flex items-center gap-6">
         {links.map((l) => (
