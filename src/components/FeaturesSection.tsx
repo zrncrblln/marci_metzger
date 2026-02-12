@@ -65,7 +65,7 @@ const FeaturesSection = () => {
             Explore what makes each Marci Metzger home unique.
           </p>
         </div>
-        ''
+
         {/* Bento Grid */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           {/* Row 1 */}
