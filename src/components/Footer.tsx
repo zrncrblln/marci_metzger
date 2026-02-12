@@ -1,4 +1,5 @@
 import logo from "../assets/logo.png";
+import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -81,6 +82,43 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-border">
+          <div className="flex justify-center space-x-6">
+            <a
+              href="https://www.facebook.com/marcimetzgerhomes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/marcimetzgerhomes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://twitter.com/MarciMetzger"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Twitter size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/marci-metzger"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Linkedin size={20} />
+            </a>
           </div>
         </div>
       </div>
