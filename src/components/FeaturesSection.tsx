@@ -7,8 +7,8 @@ import {
   MapPin,
 } from "lucide-react";
 import smoothJourney from "@/assets/villa-smooth-journey.jpg";
-import innovative from "@/assets/villa-innovative.jpg";
-import custom from "@/assets/villa-custom.jpg";
+import innovative from "@/assets/modern-countryside-retreat.jpg";
+import custom from "@/assets/desert-greens-golf-community-home.jpg";
 
 const features = [
   {
@@ -67,7 +67,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {/* Row 1 */}
           <div className="bg-background rounded-2xl overflow-hidden border border-border">
             <div className="p-4 pb-0">
@@ -76,7 +76,7 @@ const FeaturesSection = () => {
             <img
               src={innovative}
               alt="Innovative Living"
-              className="w-full h-48 object-cover"
+              className="w-full h-32 sm:h-40 md:h-48 object-cover"
             />
             <p className="text-sm text-muted-foreground px-4 pb-4">
               Luxury meets efficiency with smart tech and eco features.
@@ -89,7 +89,7 @@ const FeaturesSection = () => {
             <img
               src={smoothJourney}
               alt="Smooth Journey"
-              className="w-full h-48 object-cover"
+              className="w-full h-32 sm:h-40 md:h-48 object-cover"
             />
             <p className="text-sm text-muted-foreground px-4 pb-4">
               From start to finish, we ensure a seamless process dedicated to

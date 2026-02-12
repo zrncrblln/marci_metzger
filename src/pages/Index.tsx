@@ -1,6 +1,12 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import partnership from "@/assets/partnership.png";
+import c1 from "@/assets/c1.png";
+import c2 from "@/assets/c2.png";
+import c3 from "@/assets/c3.png";
+import c4 from "@/assets/c4.png";
+import c5 from "@/assets/c5.jpg";
+import c6 from "@/assets/c6.png";
 import TestimonialQuote from "@/components/TestimonialQuote";
 import ImageShowcase from "@/components/ImageShowcase";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -12,43 +18,18 @@ import CtaSection from "@/components/CtaSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
-const images = [
-  {
-    src: "/src/assets/c1.png",
-    alt: "High resolution image c1 from Marci Metzger Homes",
-  },
-  {
-    src: "/src/assets/c2.png",
-    alt: "High resolution image c2 from Marci Metzger Homes",
-  },
-  {
-    src: "/src/assets/c3.png",
-    alt: "High resolution image c3 from Marci Metzger Homes",
-  },
-  {
-    src: "/src/assets/c4.png",
-    alt: "High resolution image c4 from Marci Metzger Homes",
-  },
-  {
-    src: "/src/assets/c5.jpg",
-    alt: "High resolution image c5 from Marci Metzger Homes",
-  },
-  {
-    src: "/src/assets/c6.png",
-    alt: "High resolution image c6 from Marci Metzger Homes",
-  },
-];
+const images = [c1, c2, c3, c4, c5, c6];
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background mt-8">
       <Navbar />
       <HeroSection />
-      <div className="py-10">
+      <div className="py-10 px-4">
         <img
           src={partnership}
           alt="Partnership"
-          className="mx-auto block max-w-4xl h-auto"
+          className="mx-auto block w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl h-auto"
         />
       </div>
       <TestimonialQuote />
@@ -60,7 +41,7 @@ const Index = () => {
           <p className="section-subheading mb-2">Showcase</p>
         </div>
       </section>
-      <ImageShowcase images={images.map((img) => img.src)} />
+      <ImageShowcase images={images} />
       <FeaturesSection />
       <PropertiesSection />
       <BlogSection />

@@ -1,72 +1,78 @@
 import { MapPin, Bed, Bath, Square } from "lucide-react";
 import { useState } from "react";
-import alexandria from "@/assets/property-alexandria.jpg";
-import bilvox from "@/assets/property-bilvox.jpg";
-import giose from "@/assets/property-giose.jpg";
-import leoxa from "@/assets/property-leoxa.jpg";
-import villaCustom from "@/assets/villa-custom.jpg";
-import villaInnovative from "@/assets/villa-innovative.jpg";
+import winchesterLuxuryRanch from "@/assets/winchester-luxury-ranch.jpg";
+import mountainViewEstate from "@/assets/mountain-view-estate.jpg";
+import golfMountainViewHome from "@/assets/golf-mountain-view-home.jpg";
+import luxuryMountainFallsResidence from "@/assets/luxury-mountain-falls-residence.jpg";
+import desertGreensGolfCommunityHome from "@/assets/desert-greens-golf-community-home.jpg";
+import modernCountrysideRetreat from "@/assets/modern-countryside-retreat.jpg";
 
 const properties = [
   {
-    name: "Desert Oasis Villa",
-    location: "Valley View Estates",
-    price: "$450,000",
+    id: 1,
+    name: "Winchester Luxury Ranch",
+    location: "2851 Winchester Avenue – Calvada Valley U5",
+    price: "$969,000",
     bedrooms: 4,
-    bathrooms: 3,
-    area: 2800,
-    badge: "Featured",
-    image: alexandria,
-  },
-  {
-    name: "Mountain Retreat Home",
-    location: "Highland Meadows",
-    price: "$520,000",
-    bedrooms: 5,
     bathrooms: 4,
-    area: 3500,
-    badge: "For Sale",
-    image: bilvox,
-  },
-  {
-    name: "Pahrump Ranch House",
-    location: "Rural Acres",
-    price: "$380,000",
-    bedrooms: 3,
-    bathrooms: 2,
-    area: 2200,
+    area: 2877,
     badge: "Featured",
-    image: giose,
+    image: winchesterLuxuryRanch,
   },
   {
-    name: "Luxury Desert Estate",
-    location: "Golden Sands",
-    price: "$650,000",
-    bedrooms: 6,
-    bathrooms: 5,
-    area: 4200,
-    badge: "For Sale",
-    image: leoxa,
-  },
-  {
-    name: "Modern Townhouse",
-    location: "Downtown Pahrump",
-    price: "$320,000",
+    id: 2,
+    name: "Mountain View Estate",
+    location: "2061 Iroquois Avenue – Calvada Valley",
+    price: "$599,900",
     bedrooms: 3,
-    bathrooms: 2,
-    area: 1800,
-    badge: "Featured",
-    image: villaCustom,
-  },
-  {
-    name: "Spacious Family Home",
-    location: "Suburban Meadows",
-    price: "$480,000",
-    bedrooms: 4,
     bathrooms: 3,
-    area: 3100,
-    badge: "For Rent",
-    image: villaInnovative,
+    area: 2802,
+    badge: "For Sale",
+    image: mountainViewEstate,
+  },
+  {
+    id: 3,
+    name: "Golf & Mountain View Home",
+    location: "5570 Ailanto Avenue – Mountain Falls",
+    price: "$494,000",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 2006,
+    badge: "Featured",
+    image: golfMountainViewHome,
+  },
+  {
+    id: 4,
+    name: "Luxury Mountain Falls Residence",
+    location: "4935 E Cactus Canyon Drive – Mountain Falls",
+    price: "$755,000",
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 2516,
+    badge: "For Sale",
+    image: luxuryMountainFallsResidence,
+  },
+  {
+    id: 5,
+    name: "Desert Greens Golf Community Home",
+    location: "551 Montecito Drive – Desert Greens",
+    price: "$199,900",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 1222,
+    badge: "Featured",
+    image: desertGreensGolfCommunityHome,
+  },
+  {
+    id: 6,
+    name: "Modern Countryside Retreat",
+    location: "4870 Jake Court – Rural Pahrump",
+    price: "~$770,000*",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 1905,
+    badge: "For Sale",
+    image: modernCountrysideRetreat,
   },
 ];
 
@@ -188,7 +194,7 @@ const PropertiesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProperties.map((property) => (
-            <PropertyCard key={property.name} property={property} />
+            <PropertyCard key={property.id} property={property} />
           ))}
         </div>
 
