@@ -28,6 +28,17 @@ const ContactSection = () => {
                 </p>
               </div>
               <div>
+                <p className="font-medium">WhatsApp</p>
+                <p className="text-muted-foreground">
+                  <a
+                    href="https://wa.me/12069196886"
+                    className="hover:text-foreground"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </p>
+              </div>
+              <div>
                 <p className="font-medium">Address</p>
                 <p className="text-muted-foreground">
                   3190 HW-160, Suite F, Pahrump, Nevada 89048, United States

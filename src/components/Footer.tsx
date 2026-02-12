@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Star } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -88,7 +88,7 @@ const Footer = () => {
         <div className="mt-10 pt-8 border-t border-border">
           <div className="flex justify-center space-x-6">
             <a
-              href="https://www.facebook.com/marcimetzgerhomes"
+              href="https://www.facebook.com/MarciHomes/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -96,7 +96,7 @@ const Footer = () => {
               <Facebook size={20} />
             </a>
             <a
-              href="https://www.instagram.com/marcimetzgerhomes"
+              href="https://www.instagram.com/marciandlauren_nvrealtors/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -104,20 +104,20 @@ const Footer = () => {
               <Instagram size={20} />
             </a>
             <a
-              href="https://twitter.com/MarciMetzger"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Twitter size={20} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/marci-metzger"
+              href="https://www.linkedin.com/in/marci-metzger-30642496/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Linkedin size={20} />
+            </a>
+            <a
+              href="https://www.yelp.com/biz/xr3yQN_m2SgO0R_7S6p62w"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Star size={20} />
             </a>
           </div>
         </div>
