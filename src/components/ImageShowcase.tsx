@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 
@@ -10,10 +10,13 @@ export default function ImageShowcase({ images }: Props) {
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
   const [isHovered, setIsHovered] = useState(false);
 
-  const paginate = (dir: number) => {
-    const newIndex = (index + dir + images.length) % images.length;
-    setIndex([newIndex, dir]);
-  };
+  const paginate = useCallback(
+    (dir: number) => {
+      const newIndex = (index + dir + images.length) % images.length;
+      setIndex([newIndex, dir]);
+    },
+    [index, images.length],
+  );
 
   const prevIndex = (index - 1 + images.length) % images.length;
   const nextIndex = (index + 1) % images.length;
@@ -43,7 +46,7 @@ export default function ImageShowcase({ images }: Props) {
       }, 2000);
       return () => clearInterval(interval);
     }
-  }, [isHovered, index]);
+  }, [isHovered, paginate]);
 
   return (
     <div className="w-full bg-white py-5 flex justify-center overflow-hidden">
