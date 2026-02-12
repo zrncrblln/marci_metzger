@@ -21,6 +21,8 @@ const features = [
     type: "image" as const,
     title: "Smooth Journey",
     image: smoothJourney,
+    description:
+      "From start to finish, we ensure a seamless process dedicated to realizing your vision.",
   },
   {
     icon: Repeat,
@@ -31,17 +33,20 @@ const features = [
     type: "image" as const,
     title: "Innovative Living",
     image: innovative,
-  },
-  {
-    icon: Paintbrush,
-    title: "Custom Design",
-    description:
-      "From start to finish, we ensure a seamless process dedicated to realizing your vision.",
+    description: "Luxury meets efficiency with smart tech and eco features.",
   },
   {
     type: "image" as const,
-    title: "Custom Design Image",
+    title: "Custom Design",
     image: custom,
+    description:
+      "Each Haven home is a unique creation, tailored to fit your lifestyle and taste.",
+  },
+  {
+    icon: MapPin,
+    title: "Prime Locations",
+    description:
+      "Nestled in serene settings, Haven homes provide privacy and breathtaking views.",
   },
 ];
 
@@ -62,7 +67,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-3 gap-4 mb-8">
           {/* Row 1 */}
           <div className="bg-background rounded-2xl p-6 border border-border">
             <FileText size={24} className="text-foreground mb-3" />
@@ -83,6 +88,10 @@ const FeaturesSection = () => {
               alt="Smooth Journey"
               className="w-full h-48 object-cover"
             />
+            <p className="text-sm text-muted-foreground px-4 pb-4">
+              From start to finish, we ensure a seamless process dedicated to
+              realizing your vision.
+            </p>
           </div>
           <div className="bg-background rounded-2xl p-6 border border-border">
             <Repeat size={24} className="text-foreground mb-3" />
@@ -102,44 +111,31 @@ const FeaturesSection = () => {
               alt="Innovative Living"
               className="w-full h-48 object-cover"
             />
+            <p className="text-sm text-muted-foreground px-4 pb-4">
+              Luxury meets efficiency with smart tech and eco features.
+            </p>
           </div>
           <div className="bg-background rounded-2xl p-6 border border-border">
-            <Paintbrush size={24} className="text-foreground mb-3" />
-            <h3 className="font-heading text-lg mb-2">Custom Design</h3>
+            <MapPin size={24} className="text-foreground mb-3" />
+            <h3 className="font-heading text-lg mb-2">Prime Locations</h3>
             <p className="text-sm text-muted-foreground">
-              From start to finish, we ensure a seamless process dedicated to
-              realizing your vision.
+              Nestled in serene settings, Haven homes provide privacy and
+              breathtaking views.
             </p>
           </div>
           <div className="bg-background rounded-2xl overflow-hidden border border-border">
+            <div className="p-4 pb-0">
+              <h3 className="font-heading text-lg mb-2">Custom Design</h3>
+            </div>
             <img
               src={custom}
               alt="Custom Design"
-              className="w-full h-full object-cover min-h-[200px]"
+              className="w-full h-48 object-cover"
             />
-          </div>
-
-          {/* Row 3 - spanning */}
-          <div className="md:col-span-3 bg-background rounded-2xl p-6 border border-border flex flex-col md:flex-row items-start gap-6">
-            <div className="flex-1">
-              <MapPin size={24} className="text-foreground mb-3" />
-              <h3 className="font-heading text-lg mb-2">Prime Locations</h3>
-              <p className="text-sm text-muted-foreground">
-                Luxury meets efficiency with smart tech and eco features.
-              </p>
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-muted-foreground">
-                Nestled in serene settings, Haven homes provide privacy and
-                breathtaking views.
-              </p>
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-muted-foreground">
-                Each Haven home is a unique creation, tailored to fit your
-                lifestyle and taste.
-              </p>
-            </div>
+            <p className="text-sm text-muted-foreground px-4 pb-4">
+              Each Haven home is a unique creation, tailored to fit your
+              lifestyle and taste.
+            </p>
           </div>
         </div>
 
