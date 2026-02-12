@@ -1,0 +1,9 @@
+- [x] Import partnership image in src/pages/Index.tsx
+- [x] Add partnership image section after HeroSection in src/pages/Index.tsx
+- [x] Update src/components/FeaturesSection.tsx: Change bento grid to responsive grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+- [x] Update src/components/HeroSection.tsx: Make background positioning responsive with left-4 right-4 md:left-12 md:right-12
+- [x] Update src/components/HeroSection.tsx: Reduce heading text size (text-4xl sm:text-5xl md:text-7xl) and adjust border radius (rounded-[1rem] sm:rounded-[2rem] md:rounded-[3rem])
+- [x] Update src/components/FeaturesSection.tsx: Make image heights responsive (h-32 sm:h-40 md:h-48)
+- [x] Make partnership image responsive in src/pages/Index.tsx
+- [x] Test responsiveness by running dev server and checking on small devices
+- [x] Prevent horizontal scrolling on small devices by adding overflow-x: hidden to body and adjusting ImageShowcase layout
