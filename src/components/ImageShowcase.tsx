@@ -39,7 +39,7 @@ export default function ImageShowcase({ images }: Props) {
     if (!isHovered) {
       const interval = setInterval(() => {
         paginate(1);
-      }, 4000);
+      }, 2000);
       return () => clearInterval(interval);
     }
   }, [isHovered, index]);
