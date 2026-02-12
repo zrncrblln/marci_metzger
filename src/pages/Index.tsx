@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import partnership from "@/assets/partnership.png";
 import TestimonialQuote from "@/components/TestimonialQuote";
 import ImageShowcase from "@/components/ImageShowcase";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -43,7 +44,22 @@ const Index = () => {
     <div className="min-h-screen bg-background mt-8">
       <Navbar />
       <HeroSection />
+      <div className="py-10">
+        <img
+          src={partnership}
+          alt="Partnership"
+          className="mx-auto block max-w-4xl h-auto"
+        />
+      </div>
       <TestimonialQuote />
+      <section className="py-10 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-4">
+            Signature Homes
+          </h2>
+          <p className="section-subheading mb-2">Showcase</p>
+        </div>
+      </section>
       <ImageShowcase images={images.map((img) => img.src)} />
       <FeaturesSection />
       <PropertiesSection />
