@@ -67,7 +67,7 @@ const properties = [
     id: 6,
     name: "Modern Countryside Retreat",
     location: "4870 Jake Court – Rural Pahrump",
-    price: "~$770,000*",
+    price: "$770,000",
     bedrooms: 3,
     bathrooms: 2,
     area: 1905,
@@ -178,7 +178,7 @@ const PropertiesSection = () => {
     });
 
   return (
-    <section id="properties" className="py-24 px-6 bg-secondary/30">
+    <section id="properties" className="pt-24 pb-6 px-6 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">

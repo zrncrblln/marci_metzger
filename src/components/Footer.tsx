@@ -121,6 +121,9 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        <div className="mt-6 text-center text-xs text-muted-foreground">
+          Build by Zoren A. Corbillon @2026
+        </div>
       </div>
     </footer>
   );

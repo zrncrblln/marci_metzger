@@ -30,28 +30,37 @@ const TestimonialsSection = () => {
         <div className="text-center mb-14">
           <p className="section-label mb-3">Testimonials</p>
           <h2 className="section-heading mb-4">Hear from Our User</h2>
-          <p className="section-subheading">Read how our users have achieved success</p>
+          <p className="section-subheading">
+            Read how our users have achieved success
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {testimonials.map((t) => (
-            <div key={t.name} className="bg-background rounded-2xl p-5 border border-border">
+            <div
+              key={t.name}
+              className="bg-background rounded-2xl p-5 border border-border flex flex-col h-full"
+            >
               <div className="flex gap-1 mb-4">
                 {[...Array(4)].map((_, i) => (
                   <Star key={i} size={14} className="fill-accent text-accent" />
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">{t.text}</p>
-              <div className="flex items-center gap-3">
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed flex-1">
+                {t.text}
+              </p>
+              <div className="flex items-center gap-3 mt-auto">
                 <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-xs font-medium text-muted-foreground">
                   {t.name[0]}
                 </div>
-                <div>
+                <div className="flex items-center gap-2">
                   <p className="text-sm font-medium">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.role}</p>
                 </div>
                 <div className="ml-auto w-7 h-7 rounded-full bg-foreground flex items-center justify-center">
-                  <span className="text-primary-foreground text-xs font-bold">𝕏</span>
+                  <span className="text-primary-foreground text-xs font-bold">
+                    𝕏
+                  </span>
                 </div>
               </div>
             </div>
@@ -61,11 +70,15 @@ const TestimonialsSection = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <div className="flex items-center gap-3 bg-background rounded-full px-5 py-3 border border-border">
             <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
-              <span className="text-primary-foreground text-xs font-bold">C</span>
+              <span className="text-primary-foreground text-xs font-bold">
+                C
+              </span>
             </div>
             <div>
               <p className="text-sm font-medium">4.9 from 1.5k reviews</p>
-              <p className="text-xs text-muted-foreground">1,500 happy clients</p>
+              <p className="text-xs text-muted-foreground">
+                1,500 happy clients
+              </p>
             </div>
           </div>
           <a

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Card } from "@/components/ui/card";
 
 type Props = {
   images: string[];
@@ -45,24 +46,24 @@ export default function ImageShowcase({ images }: Props) {
   }, [isHovered, index]);
 
   return (
-    <div className="w-full bg-white py-14 flex justify-center overflow-hidden">
+    <div className="w-full bg-white py-5 flex justify-center overflow-hidden">
       <div
-        className="relative w-full max-w-[1200px] px-4"
+        className="relative w-full max-w-[900px] px-4"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* LEFT PREVIEW */}
-        <div className="hidden xl:block absolute left-4 top-1/2 -translate-y-1/2 w-36 h-[180px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
+        <Card className="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 w-28 h-[140px] rounded-2xl overflow-hidden opacity-70 shadow-xl p-0 border-0">
           <img src={images[prevIndex]} className="w-full h-full object-cover" />
-        </div>
+        </Card>
 
         {/* RIGHT PREVIEW */}
-        <div className="hidden xl:block absolute right-4 top-1/2 -translate-y-1/2 w-36 h-[180px] rounded-2xl overflow-hidden opacity-70 shadow-xl">
+        <Card className="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 w-28 h-[140px] rounded-2xl overflow-hidden opacity-70 shadow-xl p-0 border-0">
           <img src={images[nextIndex]} className="w-full h-full object-cover" />
-        </div>
+        </Card>
 
         {/* MAIN FLOATING CARD */}
-        <div className="relative overflow-hidden rounded-[28px] shadow-[0_30px_60px_rgba(0,0,0,0.18)] bg-white h-[400px] md:h-[480px] lg:h-[560px]">
+        <div className="relative overflow-hidden rounded-[28px] shadow-[0_30px_60px_rgba(0,0,0,0.18)] bg-white h-[280px] md:h-[320px] lg:h-[360px]">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={index}
