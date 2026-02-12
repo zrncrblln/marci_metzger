@@ -6,7 +6,7 @@ import path from "path";
 export default defineConfig(() => ({
   base: "/marci_metzger/",
   build: {
-    outDir: "dist",
+    outDir: "docs",
   },
   server: {
     host: "::",
